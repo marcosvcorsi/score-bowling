@@ -2,23 +2,25 @@ import { Game } from './Game';
 
 let g: Game;
 
+const rollMany = (n: number, pins: number) => {
+  for (let i = 0; i < n; i++) {
+    g.roll(pins);
+  }
+};
+
 describe('Bowling game', () => {
   beforeEach(() => {
     g = new Game();
   });
 
   it('should score 0 for gutter game', () => {
-    for (let i = 0; i < 20; i += 1) {
-      g.roll(0);
-    }
+    rollMany(20, 0);
 
     expect(g.score).toBe(0);
   });
 
   it('should score 20 for all ones games', () => {
-    for (let i = 0; i < 20; i += 1) {
-      g.roll(1);
-    }
+    rollMany(20, 1);
 
     expect(g.score).toBe(20);
   });
