@@ -16,12 +16,12 @@ describe('Bowling game', () => {
   it('should score 0 for gutter game', () => {
     rollMany(20, 0);
 
-    expect(g.score).toBe(0);
+    expect(g.score()).toBe(0);
   });
 
   it('should score 20 for all ones games', () => {
     rollMany(20, 1);
 
-    expect(g.score).toBe(20);
+    expect(g.score()).toBe(20);
   });
 });
