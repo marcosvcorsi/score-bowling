@@ -1,9 +1,11 @@
 export class Game {
+  private _score: number = 0;
+
   roll(pins: number): void {
-    console.log(pins);
+    this._score += pins;
   }
 
-  score(): number {
-    return 0;
+  get score(): number {
+    return this._score;
   }
 }
