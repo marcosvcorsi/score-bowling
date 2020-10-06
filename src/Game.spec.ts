@@ -8,6 +8,11 @@ const rollMany = (n: number, pins: number) => {
   }
 };
 
+const rollSpare = () => {
+  g.roll(5);
+  g.roll(5);
+};
+
 describe('Bowling game', () => {
   beforeEach(() => {
     g = new Game();
@@ -26,8 +31,8 @@ describe('Bowling game', () => {
   });
 
   it('should score 16 with spare followed by a 3 ball', () => {
-    g.roll(5);
-    g.roll(5);
+    rollSpare();
+
     g.roll(3);
 
     expect(g.score()).toBe(16);
