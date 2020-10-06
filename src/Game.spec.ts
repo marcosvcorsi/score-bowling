@@ -13,6 +13,10 @@ const rollSpare = () => {
   g.roll(5);
 };
 
+const rollStrike = () => {
+  g.roll(10);
+};
+
 describe('Bowling game', () => {
   beforeEach(() => {
     g = new Game();
@@ -39,7 +43,8 @@ describe('Bowling game', () => {
   });
 
   it('should score 24 for a strike followed by a 3 and 4 balls', () => {
-    g.roll(10);
+    rollStrike();
+
     g.roll(3);
     g.roll(4);
 
